@@ -20,5 +20,5 @@ class consumer(rabbitmq):
         print("consumer: {}".format(body.decode()))
 
     @classmethod
-    def new_consumer(cls) -> 'consumer':
-        return cls()
+    def new_consumer(cls, queue_name='') -> 'consumer':
+        return cls(queue_name=queue_name)
